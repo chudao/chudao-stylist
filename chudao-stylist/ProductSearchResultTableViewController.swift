@@ -16,8 +16,11 @@ class ProductSearchResultTableViewController: UITableViewController {
     var productDetail: [[String:AnyObject]] = []
     var responseDetail: [String:AnyObject] = [:]
     var recommendedProduct: [[String:AnyObject]] = []
+    var requestDetail: [String:AnyObject] = [:]
     var authToken: String = "undefined"
     var identity: String = "undefined"
+    var requestSpecificImageAsData = NSData()
+    var userDefaultImageAsData = NSData()
     
     @IBAction func cancel(sender: AnyObject) {
             performSegueWithIdentifier("searchResultToRespond", sender: self)
@@ -233,6 +236,9 @@ class ProductSearchResultTableViewController: UITableViewController {
             destinationViewController.authToken = authToken
             destinationViewController.recommendedProduct = recommendedProduct
             destinationViewController.responseDetail = responseDetail
+            destinationViewController.requestDetail = requestDetail
+            destinationViewController.userDefaultImageAsData = userDefaultImageAsData
+            destinationViewController.requestSpecificImageAsData = requestSpecificImageAsData
         }
         
         if segue.identifier == "searchResultToRespond" {
@@ -242,6 +248,9 @@ class ProductSearchResultTableViewController: UITableViewController {
             destinationViewController.identity = identity
             destinationViewController.responseDetail = responseDetail
             destinationViewController.recommendedProduct = recommendedProduct
+            destinationViewController.requestDetail = requestDetail
+            destinationViewController.userDefaultImageAsData = userDefaultImageAsData
+            destinationViewController.requestSpecificImageAsData = requestSpecificImageAsData
         }
     }
     

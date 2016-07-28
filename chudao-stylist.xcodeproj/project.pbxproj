@@ -24,6 +24,7 @@
 		E50FF1EC1D45CC5D00C40D7C /* ProductSearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FF1E91D45CC5D00C40D7C /* ProductSearchResultTableViewController.swift */; };
 		E50FF1EF1D45CDDE00C40D7C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FF1ED1D45CDDE00C40D7C /* AccountViewController.swift */; };
 		E50FF1F01D45CDDE00C40D7C /* SuggestProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FF1EE1D45CDDE00C40D7C /* SuggestProductViewController.swift */; };
+		E58B21961D49B6B50038AD42 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58B21951D49B6B50038AD42 /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E50FF1E91D45CC5D00C40D7C /* ProductSearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchResultTableViewController.swift; sourceTree = "<group>"; };
 		E50FF1ED1D45CDDE00C40D7C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E50FF1EE1D45CDDE00C40D7C /* SuggestProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestProductViewController.swift; sourceTree = "<group>"; };
+		E58B21951D49B6B50038AD42 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		E50FF1C31D45BBFA00C40D7C /* chudao-stylist */ = {
 			isa = PBXGroup;
 			children = (
+				E58B21951D49B6B50038AD42 /* ContactViewController.swift */,
 				E50FF1ED1D45CDDE00C40D7C /* AccountViewController.swift */,
 				E50FF1EE1D45CDDE00C40D7C /* SuggestProductViewController.swift */,
 				E50FF1E71D45CC5D00C40D7C /* ProductDetailViewController.swift */,
@@ -186,6 +189,7 @@
 				E50FF1DE1D45C98000C40D7C /* SharedUserInfo.swift in Sources */,
 				E50FF1EB1D45CC5D00C40D7C /* ProductSearchResultNavigationViewController.swift in Sources */,
 				E50FF1E21D45C9FD00C40D7C /* RequestTableViewController.swift in Sources */,
+				E58B21961D49B6B50038AD42 /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +339,7 @@
 				E50FF1D81D45BBFA00C40D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -22,6 +22,9 @@ class ProductDetailViewController: UIViewController {
     var imageAsNSData: NSData = NSData()
     var responseDetail: [String:AnyObject] = [:]
     var recommendedProduct: [[String:AnyObject]] = []
+    var requestDetail: [String:AnyObject] = [:]
+    var requestSpecificImageAsData = NSData()
+    var userDefaultImageAsData = NSData()
 
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var brand: UILabel!
@@ -216,13 +219,6 @@ class ProductDetailViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "productDetailToSearchResult" {
-            let destinationViewController = segue.destinationViewController as! ProductSearchResultTableViewController
-            destinationViewController.userId = sender as! Int
-            destinationViewController.authToken = authToken
-            destinationViewController.identity = identity
-        }
-        
         if segue.identifier == "addToRespond" {
             let destinationViewController = segue.destinationViewController as! RespondViewController
             destinationViewController.userId = userId
@@ -231,6 +227,9 @@ class ProductDetailViewController: UIViewController {
             recommendedProduct.append(["productId":productId,"productName":productName,"productBrand":productBrand,"productDescription":productDescription,"productImage":imageAsNSData])
             destinationViewController.recommendedProduct = recommendedProduct
             destinationViewController.responseDetail = responseDetail
+            destinationViewController.requestDetail = requestDetail
+            destinationViewController.userDefaultImageAsData = userDefaultImageAsData
+            destinationViewController.requestSpecificImageAsData = requestSpecificImageAsData
         }
     }
 }

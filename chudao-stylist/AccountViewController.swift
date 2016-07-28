@@ -10,7 +10,6 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
-    @IBOutlet var submittedRecommendationButton: UIButton!
     @IBAction func logout(sender: AnyObject) {
         performSegueWithIdentifier("accountToHome", sender: self)
     }
@@ -19,6 +18,9 @@ class AccountViewController: UIViewController {
     }
     @IBAction func suggest(sender: AnyObject) {
         performSegueWithIdentifier("accountToSuggest", sender: self)
+    }
+    @IBAction func contact(sender: AnyObject) {
+        performSegueWithIdentifier("accountToContact", sender: self)
     }
     
     var sharedUserInfo = SharedUserInfo()
@@ -40,6 +42,13 @@ class AccountViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "accountToSuggest" {
             let detinationController = segue.destinationViewController as! SuggestProductViewController
+            detinationController.userId = sharedUserInfo.userId
+            detinationController.identity = sharedUserInfo.identity
+            detinationController.authToken = sharedUserInfo.authToken
+        }
+        
+        if segue.identifier == "accountToContact" {
+            let detinationController = segue.destinationViewController as! ContactViewController
             detinationController.userId = sharedUserInfo.userId
             detinationController.identity = sharedUserInfo.identity
             detinationController.authToken = sharedUserInfo.authToken

@@ -49,7 +49,8 @@ class SignupViewController: UIViewController,UIScrollViewDelegate,UITextFieldDel
             displayAlert("Password mismatch", message: "Please re-enter your password", enterMoreInfo: false)
         }else{
             dispatch_async(dispatch_get_main_queue()) {
-                self.displayAlert("Complete info will improve your experience", message: "Stylist could better recommend for you if you provide more information.  Do you still want to continue?", enterMoreInfo: true)
+                self.register()
+//                self.displayAlert("Complete info will improve your experience", message: "We could certify you as a stylist faster if you provideXXX.  Do you still want to continue?", enterMoreInfo: true)
             }
         }
     }
@@ -184,7 +185,9 @@ class SignupViewController: UIViewController,UIScrollViewDelegate,UITextFieldDel
                 print(jsonResponse)
                 if jsonResponse["response-code"]! as! String == "010" {
                     self.userId = jsonResponse["user-id"]! as! Int
-                    self.uploadImage()
+                    if self.image.image != nil{
+                        self.uploadImage()
+                    }
                     dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("signupToHome", sender: self.userId)
                     }

@@ -16,6 +16,9 @@ class RespondProductDetailViewController: UIViewController {
     var productIndex: Int = -1
     var recommendedProduct: [[String:AnyObject]] = []
     var responseDetail: [String:AnyObject] = [:]
+    var requestDetail: [String:AnyObject] = [:]
+    var requestSpecificImageAsData = NSData()
+    var userDefaultImageAsData = NSData()
 
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var productBrand: UILabel!
@@ -75,6 +78,9 @@ class RespondProductDetailViewController: UIViewController {
             destinationViewController.identity = identity
             destinationViewController.recommendedProduct = recommendedProduct
             destinationViewController.responseDetail = responseDetail
+            destinationViewController.requestDetail = requestDetail
+            destinationViewController.userDefaultImageAsData = userDefaultImageAsData
+            destinationViewController.requestSpecificImageAsData = requestSpecificImageAsData
        }
     }
 
